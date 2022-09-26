@@ -48,7 +48,6 @@ class user
 		int get_time();
 		int morning_slot(int);
 		int afternoon_slot(int);
-		friend class admin;
 
 		user()
 		{
@@ -59,7 +58,7 @@ class user
 			centre="NA";
 		}
 };
-class admin
+class admin : public user
 {
 	protected:
 		string centre1;
