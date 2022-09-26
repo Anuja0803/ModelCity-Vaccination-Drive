@@ -86,13 +86,10 @@ class admin
 			vcount3=15;
 		}
 };
-class vaccination : public user,public admin
-{
-	public:
-		void menu();
-		void user_login();
-		void admin_login();
-};
+
+void menu();
+void user_login();
+void admin_login();
 
 int reg_list_to_file();
 int reg_file_to_list();
