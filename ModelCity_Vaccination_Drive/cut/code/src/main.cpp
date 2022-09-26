@@ -18,7 +18,7 @@
 #include "functions.cpp"
 using namespace std;
 
-void vaccination :: menu()	//Function to display admin menu
+void menu()	//Function to display admin menu
 {
 	system("clear");
 	int choice;
@@ -70,9 +70,10 @@ void vaccination :: menu()	//Function to display admin menu
 	system("clear");
 }
 
-void vaccination :: user_login()	//Function to display User menu
+void user_login()	//Function to display User menu
 {
 	system("clear");
+	user u;
 	int choice1;
 	while(choice1!=3)
 	{
@@ -96,11 +97,11 @@ void vaccination :: user_login()	//Function to display User menu
 		{
 			case 1:
 				system("clear");
-				new_user();	//Function call to new_user function 
+				u.new_user();	//Function call to new_user function 
 				break;
 			case 2:
 				system("clear");
-				registered_user();	//function call to registered_user function
+				u.registered_user();	//function call to registered_user function
 				break;
 			case 3: 
 				system("clear");
@@ -111,9 +112,10 @@ void vaccination :: user_login()	//Function to display User menu
 	}
 }
 
-void vaccination :: admin_login()	//Function to display admin menu
+void admin_login()	//Function to display admin menu
 {
 	int choice3;
+	admin a;
 	system("clear");
 
 	while(choice3!=8)
@@ -144,27 +146,27 @@ void vaccination :: admin_login()	//Function to display admin menu
 		{
 			case 1:
 				system("clear");
-				show_bene_data();	//Function call to show_beneficiary_function
+				a.show_bene_data();	//Function call to show_beneficiary_function
 				break;
 			case 3:
 				system("clear");
-				display_vaccine_stock();	//Function call to display_vaccine_stock
+				a.display_vaccine_stock();	//Function call to display_vaccine_stock
 				break;
 			case 4:
 				system("clear");
-				delete_fully_vaccinated();	//Function call to delete_fully_vaccinated function
+				a.delete_fully_vaccinated();	//Function call to delete_fully_vaccinated function
 				break;
 			case 5: 
 				system("clear");
-				non_vaccinated();	//Function call to non_vaccinated function
+				a.non_vaccinated();	//Function call to non_vaccinated function
 				break;
 			case 6: 
 				system("clear");
-				fully_vaccinated();	//Function call to fully_vaccinated function
+				a.fully_vaccinated();	//Function call to fully_vaccinated function
 				break;
 			case 7:
 				system("clear");
-				today_vaccinated();	//Function call to today_vaccinated function
+				a.today_vaccinated();	//Function call to today_vaccinated function
 				break;
 			case 8: 
 				system("clear");
@@ -276,11 +278,10 @@ void user :: registered_user()	//This function displays the register corner menu
 }
 int main()	// This is the main function
 {	
-	vaccination v;
 	reg_file_to_list();	//For inserting records in list from Registered File
 	vaccine_file_to_list();	//For inserting records in Registered File from list
 
-	v.menu();
+	menu();
 
 	reg_list_to_file(); //For inserting records in Registered File from list
 	vaccine_list_to_file(); //For inserting records in list from Vaccine File
