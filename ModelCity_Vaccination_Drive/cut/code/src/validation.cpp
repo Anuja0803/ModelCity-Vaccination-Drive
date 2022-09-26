@@ -49,6 +49,7 @@ bool age_validation(char *age)  //Validation for checking restricted age.
 	if(y==1)
 	{
 		cout<<"Age should be numeric"<<endl;
+		return false;
 	}
         if(atoi(age) >= 18 && atoi(age) <= 100) //Allowed age should be greater than 18 and less than 100 
         {
